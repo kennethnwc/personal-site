@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon, Link, Text } from "@chakra-ui/react";
+import { Flex, Heading, Icon, Link } from "@chakra-ui/react";
 import Duration from "duration";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
