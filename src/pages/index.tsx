@@ -1,12 +1,23 @@
 import { Container } from "../components/Container";
+import { Experiences } from "../components/Experiences";
 import { Introduction } from "../components/Introduction";
-import { About } from "../components/About";
+import { Projects } from "../components/Projects";
+import { RightSideBar } from "../components/RightSideBar";
+import { Skills } from "../components/Skills";
 
 const Index = () => (
-  <Container height="100vh">
-    <Introduction />
-    <About></About>
-  </Container>
+  <>
+    <RightSideBar />
+    <Container
+      bgGradient="linear-gradient(to left, #ffffff, #81ff5f)"
+      bgClip="text"
+    >
+      <Introduction />
+      <Experiences />
+      <Projects />
+      <Skills />
+    </Container>
+  </>
 );
 
 export default Index;

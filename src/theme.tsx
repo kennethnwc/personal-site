@@ -17,7 +17,7 @@ const theme = extendTheme({
   fonts,
   breakpoints,
   initialColorMode: "dark",
-  // useSystemColorMode: false,
+  useSystemColorMode: false,
 });
 
 export default theme;
