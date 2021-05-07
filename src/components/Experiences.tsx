@@ -1,8 +1,8 @@
-import { Flex, Heading, Box } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 export const Experiences: React.FC = () => {
   return (
     <Flex
-      id="experiences"
+      id="experience"
       justifyContent="center"
       alignItems="center"
       flexDir="column"

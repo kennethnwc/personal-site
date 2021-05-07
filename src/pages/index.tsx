@@ -8,10 +8,7 @@ import { Skills } from "../components/Skills";
 const Index = () => (
   <>
     <RightSideBar />
-    <Container
-      bgGradient="linear-gradient(to left, #ffffff, #81ff5f)"
-      bgClip="text"
-    >
+    <Container color="teal.300">
       <Introduction />
       <Experiences />
       <Projects />

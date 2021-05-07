@@ -12,7 +12,7 @@ export const Introduction = ({
 
   return (
     <Flex
-      id="intro"
+      id="home"
       justifyContent="center"
       alignItems="center"
       flexDir="column"
