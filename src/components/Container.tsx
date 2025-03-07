@@ -1,19 +1,21 @@
-import { Flex, useColorMode, FlexProps } from "@chakra-ui/react";
+import { cn } from "../lib/utils";
+import { ReactNode } from "react";
 
-export const Container = (props: FlexProps) => {
-  const { colorMode } = useColorMode();
+interface ContainerProps {
+  children: ReactNode;
+  className?: string;
+}
 
-  const bgColor = { light: "gray.50", dark: "gray.900" };
-
-  const color = { light: "black", dark: "white" };
+export function Container({ children, className }: ContainerProps) {
   return (
-    <Flex
-      direction="column"
-      alignItems="center"
-      justifyContent="flex-start"
-      bg={bgColor[colorMode]}
-      color={color[colorMode]}
-      {...props}
-    />
+    <div
+      className={cn(
+        "mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12",
+        "bg-background text-foreground",
+        className
+      )}
+    >
+      {children}
+    </div>
   );
-};
+}

@@ -1,23 +1,21 @@
-import { Box, Link, Stack } from "@chakra-ui/react";
-
-const section = ["home", "experience", "projects", "skills"];
+const sections = ["home", "experience", "projects", "skills"];
 
 export const RightSideBar = () => {
   return (
-    <Box position="sticky" top="0" color="white" zIndex="10">
-      <Stack spacing={4} direction="row" bg="teal.700">
-        {section.map((link) => (
-          <Link
-            key={link}
-            href={`#${link}`}
-            textTransform="capitalize"
-            py={1}
-            px={2}
-          >
-            {link}
-          </Link>
-        ))}
-      </Stack>
-    </Box>
+    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+      <div className="container flex h-14 items-center">
+        <div className="flex gap-6">
+          {sections.map((section) => (
+            <a
+              key={section}
+              href={`#${section}`}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground capitalize"
+            >
+              {section}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
   );
 };
