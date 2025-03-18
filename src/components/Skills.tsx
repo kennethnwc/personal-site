@@ -1,4 +1,3 @@
-import { Box, Flex, Heading, Icon } from "@chakra-ui/react";
 import React from "react";
 import { FaDocker, FaReact } from "react-icons/fa";
 import {
@@ -6,50 +5,44 @@ import {
   SiMongodb,
   SiPostgresql,
   SiPython,
-  SiRails,
+  SiRubyonrails,
   SiTypescript,
 } from "react-icons/si";
 import { nextjsIcon } from "../utils/icon";
 
-export const Skills: React.FC = () => {
+export const Skills = () => {
   return (
-    <Flex
-      id="skills"
-      justifyContent="center"
-      alignItems="center"
-      flexDir="column"
-      height="100vh"
-    >
-      <Heading fontSize="6xl" mb="2">
-        Core skills
-      </Heading>
-      <Box id="language">
-        <Icon as={SiTypescript} boxSize={20} color="white" />
-        <Icon as={SiPython} boxSize={20} color="white" ml="2" />
-      </Box>
+    <section id="skills" className="min-h-screen py-20">
+      <div className="container mx-auto flex flex-col items-center">
+        <h2 className="mb-12 text-4xl font-bold tracking-tight">Core Skills</h2>
 
-      <Flex
-        id="framework"
-        flexDir="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Icon as={FaReact} boxSize={20} color="white" />
-        <Icon viewBox="0 0 148 90" width="200px" height="100px" color="white">
-          <path d={nextjsIcon} fill="currentColor" />
-        </Icon>
-      </Flex>
+        <div className="mb-8 flex items-center justify-center space-x-4">
+          <SiTypescript className="h-16 w-16 text-foreground" />
+          <SiPython className="h-16 w-16 text-foreground" />
+        </div>
 
-      <Icon as={FaDocker} boxSize={20} color="white" />
-      <Icon as={SiPostgresql} boxSize={20} color="white" />
-      <Heading fontSize="4vw" mt="2">
-        Skills
-      </Heading>
-      <Flex flexDir="row" justifyContent="center" alignItems="center">
-        <Icon as={SiRails} w="100px" h="70px" color="white" />
-        <Icon as={SiApachesolr} w="50px" h="50px" ml="2" color="white" />
-        <Icon as={SiMongodb} w="50px" h="50px" ml="2" color="white" />
-      </Flex>
-    </Flex>
+        <div className="mb-8 flex items-center justify-center space-x-4">
+          <FaReact className="h-16 w-16 text-foreground" />
+          <svg viewBox="0 0 148 90" className="h-24 w-32 text-foreground">
+            <path d={nextjsIcon} fill="currentColor" />
+          </svg>
+        </div>
+
+        <div className="mb-8 flex items-center justify-center space-x-4">
+          <FaDocker className="h-16 w-16 text-foreground" />
+          <SiPostgresql className="h-16 w-16 text-foreground" />
+        </div>
+
+        <h3 className="mb-8 text-3xl font-semibold tracking-tight">
+          Additional Skills
+        </h3>
+
+        <div className="flex items-center justify-center space-x-4">
+          <SiRubyonrails className="h-14 w-14 text-foreground" />
+          <SiApachesolr className="h-12 w-12 text-foreground" />
+          <SiMongodb className="h-12 w-12 text-foreground" />
+        </div>
+      </div>
+    </section>
   );
 };

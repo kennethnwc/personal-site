@@ -1,72 +1,62 @@
-import { chakra, Heading, BoxProps, Link, Icon } from "@chakra-ui/react";
-import { AiFillGithub } from "react-icons/ai";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "../lib/utils";
+import {
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Card as ShadcnCard,
+} from "./ui/card";
 
-type Props = {
+interface Props {
   title: string;
   description: string;
   url: string;
   thumbnail: string;
   sourceCode?: string;
-};
+  className?: string;
+}
 
-export const Card: React.FC<BoxProps & Props> = ({
+export const Card = ({
   title,
   description,
   url,
   thumbnail,
-  sourceCode,
-  ...props
-}) => {
+  className,
+}: Props) => {
+  const cardContent = (
+    <>
+      <div className="relative h-48 w-full overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background/80" />
+        <Image
+          src={`/${thumbnail}`}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+      <CardHeader>
+        <CardTitle className="text-xl font-bold tracking-tight text-glow">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-base">{description}</CardDescription>
+      </CardHeader>
+    </>
+  );
+
   return (
-    <chakra.div
-      className="card"
-      transition="all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)"
-      color="white"
-      h="18em"
-      w="14em"
-      display="flex"
-      position="relative"
-      flexDir="column"
-      borderRadius="16px"
-      boxShadow="10px 10px 10px #e1e1e3, -10px -10px 10px #ffffff"
-      {...props}
+    <ShadcnCard
+      className={cn(
+        "group relative w-[350px] overflow-hidden transition-all duration-500",
+        "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent",
+        "hover:glow",
+        "bg-secondary/30 backdrop-blur-xl border-white/10",
+        className
+      )}
     >
-      <a href={url}>
-        <chakra.div
-          borderTopLeftRadius="16px"
-          borderTopRightRadius="16px"
-          className="card-image"
-          _hover={{ height: "18em", zIndex: "2" }}
-          height="6em"
-          width="14em"
-          padding="1em 2em"
-          position="absolute"
-          top="0"
-          backgroundImage={`url('/${thumbnail}')`}
-          backgroundSize="cover"
-          backgroundRepeat="no-repeat"
-          transition="all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)"
-        ></chakra.div>
-      </a>
-      <chakra.div
-        className="card-description"
-        // _hover={{ height: "0em", padding: "0px 1em" }}
-        height="12em"
-        width="14em"
-        position="absolute"
-        bottom="0em"
-        transition="all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)"
-        padding="0.5em 1em"
-        textAlign="center"
-      >
-        <Heading fontSize="1xl">{title}</Heading>
-        <chakra.p mt="2">{description}</chakra.p>
-        {sourceCode && (
-          <Link href={sourceCode}>
-            Source Code <Icon as={AiFillGithub}></Icon>
-          </Link>
-        )}
-      </chakra.div>
-    </chakra.div>
+      <Link href={url} className="block">
+        {cardContent}
+      </Link>
+    </ShadcnCard>
   );
 };

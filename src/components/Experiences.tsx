@@ -1,21 +1,21 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
-export const Experiences: React.FC = () => {
+export const Experiences = () => {
   return (
-    <Flex
-      id="experience"
-      justifyContent="center"
-      alignItems="center"
-      flexDir="column"
-      height="100vh"
-    >
-      <Heading fontSize="6xl">Experience</Heading>
-      <Box fontSize="2xl" mt="10" mx="10">
-        <Box>2019 - Present</Box>
-        <Box>Full Stack developer</Box>
-        <Box>
-          Developed and maintained various websites and data managment system
-        </Box>
-      </Box>
-    </Flex>
+    <section id="experience" className="min-h-screen py-20">
+      <div className="container mx-auto">
+        <h2 className="mb-12 text-center text-4xl font-bold tracking-tight">
+          Experiences
+        </h2>
+        <div className="mx-auto max-w-2xl space-y-8 text-center">
+          <div className="space-y-2">
+            <p className="text-xl text-muted-foreground">2019 - 2021</p>
+            <h3 className="text-2xl font-semibold">Full Stack Developer</h3>
+          </div>
+          <div className="space-y-2">
+            <p className="text-xl text-muted-foreground">2022 - Present</p>
+            <h3 className="text-2xl font-semibold">Software Engineer</h3>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

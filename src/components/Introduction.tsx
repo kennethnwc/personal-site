@@ -1,4 +1,3 @@
-import { Flex, Heading, Icon, Link } from "@chakra-ui/react";
 import Duration from "duration";
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
@@ -11,27 +10,26 @@ export const Introduction = ({
   const duration = new Duration(new Date("2019-10-01"), new Date());
 
   return (
-    <Flex
+    <section
       id="home"
-      justifyContent="center"
-      alignItems="center"
-      flexDir="column"
-      height="100vh"
-      mx="3"
+      className="flex min-h-screen flex-col items-center justify-center px-4"
     >
-      <Heading fontSize="6xl">
+      <h1 className="flex items-center text-5xl font-bold tracking-tight sm:text-6xl">
         {title}
-        <Link href="https://github.com/kennethnwc">
-          <Icon as={AiFillGithub} ml="2" color="white" />
-        </Link>
-      </Heading>
-      <Heading fontSize="2xl" mt="5">
+        <a
+          href="https://github.com/kennethnwc"
+          className="ml-2 inline-flex text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <AiFillGithub className="h-10 w-10" />
+        </a>
+      </h1>
+      <h2 className="mt-6 text-xl text-muted-foreground sm:text-2xl">
         Developer for
         {duration.year === 1 && " 1 year "}
         {duration.year > 1 && ` ${duration.year} years `}
         {duration.month > 1 && `and ${duration.month} months`}
         {duration.month === 1 && "and a month"}
-      </Heading>
-    </Flex>
+      </h2>
+    </section>
   );
 };
