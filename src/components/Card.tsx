@@ -1,14 +1,12 @@
-import { AiFillGithub } from "react-icons/ai";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "../lib/utils";
 import {
-  Card as ShadcnCard,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
+  Card as ShadcnCard,
 } from "./ui/card";
-import { cn } from "../lib/utils";
-import Image from "next/image";
 
 interface Props {
   title: string;
@@ -24,9 +22,28 @@ export const Card = ({
   description,
   url,
   thumbnail,
-  sourceCode,
   className,
 }: Props) => {
+  const cardContent = (
+    <>
+      <div className="relative h-48 w-full overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background/80" />
+        <Image
+          src={`/${thumbnail}`}
+          alt={title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+      <CardHeader>
+        <CardTitle className="text-xl font-bold tracking-tight text-glow">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-base">{description}</CardDescription>
+      </CardHeader>
+    </>
+  );
+
   return (
     <ShadcnCard
       className={cn(
@@ -37,33 +54,9 @@ export const Card = ({
         className
       )}
     >
-      <a href={url} className="block">
-        <div className="relative h-48 w-full overflow-hidden">
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-background/80" />
-          <Image
-            src={`/${thumbnail}`}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        </div>
-        <CardHeader>
-          <CardTitle className="text-xl font-bold tracking-tight text-glow">
-            {title}
-          </CardTitle>
-          <CardDescription className="text-base">{description}</CardDescription>
-        </CardHeader>
-        {sourceCode && (
-          <CardFooter>
-            <a
-              href={sourceCode}
-              className="inline-flex items-center gap-2 text-sm text-primary transition-colors hover:text-glow"
-            >
-              View Source <AiFillGithub className="h-4 w-4" />
-            </a>
-          </CardFooter>
-        )}
-      </a>
+      <Link href={url} className="block">
+        {cardContent}
+      </Link>
     </ShadcnCard>
   );
 };
