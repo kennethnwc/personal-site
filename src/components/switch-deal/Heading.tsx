@@ -1,11 +1,9 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 
-import { Heading } from "@chakra-ui/react";
-
-export const MyHeading: React.FC = ({ children }) => {
+export function MyHeading({ children }: PropsWithChildren) {
   return (
-    <Heading fontSize="2xl" mt="5">
+    <h2 className="mt-8 text-xl font-semibold text-slate-900 sm:text-2xl">
       {children}
-    </Heading>
+    </h2>
   );
-};
+}
