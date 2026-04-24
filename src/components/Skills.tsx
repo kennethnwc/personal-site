@@ -102,7 +102,7 @@ export const Skills = () => {
                 {group.items.map((item) => (
                   <div key={item.label} className="retro-skill-item">
                     <span className="shrink-0">{item.icon}</span>
-                    <span className="text-sm font-medium text-slate-700">
+                    <span className="text-sm font-medium text-slate-900">
                       {item.label}
                     </span>
                   </div>
@@ -114,7 +114,7 @@ export const Skills = () => {
 
         <div className="retro-inset">
           <p className="retro-kicker">agentic tooling</p>
-          <p className="mt-3 text-sm leading-6 text-slate-700">
+          <p className="mt-3 text-sm leading-6 text-slate-900">
             Comfortable shipping with modern coding agents and agent workflows,
             including structured tool use, reusable skills, harness-based
             execution, and multi-step automation loops.
@@ -130,7 +130,7 @@ export const Skills = () => {
 
         <div className="retro-inset">
           <p className="retro-kicker">workflow notes</p>
-          <p className="mt-3 text-sm leading-6 text-slate-700">
+          <p className="mt-3 text-sm leading-6 text-slate-900">
             I tend to enjoy typed frontends, strong data modeling, and products
             where content structure matters as much as visual polish.
           </p>

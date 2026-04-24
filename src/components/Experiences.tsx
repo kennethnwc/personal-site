@@ -43,7 +43,7 @@ export const Experiences = () => {
               <h3 className="text-xl font-semibold text-slate-900">
                 {experience.title}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-slate-900">
                 {experience.description}
               </p>
             </article>
@@ -51,8 +51,8 @@ export const Experiences = () => {
         </div>
 
         <div className="retro-inset">
-          <p className="retro-kicker">things I enjoy building</p>
-          <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+          <p className="retro-kicker">things I like shipping</p>
+          <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-900 sm:grid-cols-2">
             {interests.map((interest) => (
               <li key={interest} className="retro-list-item">
                 {interest}

@@ -13,7 +13,7 @@ export const Projects = () => {
               Projects
             </h2>
           </div>
-          <span className="retro-pill">live links</span>
+          <span className="retro-pill">double click to open</span>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2">

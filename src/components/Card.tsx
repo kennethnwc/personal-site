@@ -51,11 +51,11 @@ export const Card = ({
             <h3 className="font-display text-lg leading-snug text-slate-900 sm:text-xl">
               {title}
             </h3>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
+            <p className="mt-2 text-sm leading-6 text-slate-900">
               {description}
             </p>
           </div>
-          <span className="retro-stamp shrink-0">web</span>
+          <span className="retro-stamp shrink-0">.exe</span>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -73,7 +73,7 @@ export const Card = ({
             rel="noreferrer"
             className="retro-button"
           >
-            Visit
+            Open
             <ArrowUpRight className="h-4 w-4" />
           </Link>
           {sourceCode ? (
